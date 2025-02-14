@@ -2,20 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Định nghĩa màu nền và chữ theo chế độ sáng/tối */
 :root {
   --background: #ffffff;
+  --lightbackground: #f1f1f1;
   --foreground: #171717;
+  --primary: #febe1e;
+  --secondary: #081921;
+  --third: #15262e;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #febe1e;
+    --secondary: #081921;
+    --third: #15262e;
   }
-}
+} */
 
+/* Áp dụng màu sắc và font chữ */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SpaceGrotesk", sans-serif;
+  @apply min-h-screen;
+}
+
+/* Custom utility */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("/fonts/SpaceGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("/fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("/fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("/fonts/SpaceGrotesk-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("/fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.custom-menu-root .ant-menu-item-selected {
+  color: var(--primary); /* Màu chữ */
+  background-color: var(--third); /* Màu nền */
+  border-radius: 8px; /* Bo góc */
+}
+
+.custom-menu-root .ant-menu-item:hover {
+  color: var(--primary);
+  background-color: var(--secondary);
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next,
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-next:hover,
+.ant-carousel .slick-prev:focus,
+.ant-carousel .slick-next:focus {
+  font-size: inherit;
+  color: var(--secondary) !important;
+}
+
+.ant-carousel .slick-prev::before {
+  color: currentColor !important;
+}
+
+.slick-arrow.slick-prev {
+  font-size: 20px !important;
+}
+
+.ant-carousel .slick-next::before {
+  color: var(--secondary) !important;
+}
+
+.slick-arrow.slick-next {
+  font-size: 20px !important;
 }
