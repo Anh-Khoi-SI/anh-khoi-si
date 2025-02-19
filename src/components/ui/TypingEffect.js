@@ -2,8 +2,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const text = ["Giải Pháp Tích Hợp", "Hệ Thống"];
-
 const letterAnimation = {
   hidden: { opacity: 0, y: 20 },
   visible: (i) => ({
@@ -13,7 +11,7 @@ const letterAnimation = {
   }),
 };
 
-export default function TypingEffect() {
+export default function TypingEffect({ text, ui }) {
   const fullText = text.join(" "); // Ghép thành 1 chuỗi
   const [cursorIndex, setCursorIndex] = useState(0);
   const totalLetters = fullText.length;
@@ -30,10 +28,15 @@ export default function TypingEffect() {
   let currentIndex = -1; // Vị trí tổng thể của ký tự
 
   return (
-    <h1 className="text-6xl font-bold text-left leading-[1.2]">
+    <h1
+      className={`${
+        ui === "about"
+          ? " md:text-[17px] lg:text-[26px] xl:text-[38px]"
+          : "text-5xl w-full sm:text-6xl text-left font-bold"
+      } leading-[1.2] `}
+    >
       {text.map((line, lineIndex) => (
         <span key={lineIndex} className="inline">
-          {" "}
           {/* Dùng inline để không xuống dòng */}
           {line.split("").map((letter, i) => {
             currentIndex++; // Tăng vị trí tổng thể
@@ -51,7 +54,11 @@ export default function TypingEffect() {
                 {/* Hiển thị con trỏ tại vị trí hiện tại */}
                 {currentIndex === cursorIndex && (
                   <motion.span
-                    className="absolute -right-1 top-0 h-[60px] w-[4px] bg-black"
+                    className={` ${
+                      ui === "about"
+                        ? "bg-white md:h-[20px] lg:h-[35px]"
+                        : "bg-black h-[60px]"
+                    } absolute -right-1 top-0  w-[4px]`}
                     animate={{ opacity: [1, 0] }}
                     transition={{
                       repeat: Infinity,
@@ -63,14 +70,25 @@ export default function TypingEffect() {
               </span>
             );
           })}
+          {lineIndex === 0 && (
+            <>
+              <br className="block sm:hidden" />
+            </>
+          )}
+          {lineIndex === 0 && ui === "about" && <br className="block" />}
+
           {/* Xuống dòng sau "Hệ Thống" */}
-          {lineIndex === 0 && <br />}
+          {lineIndex === 1 && <br />}
         </span>
       ))}
-      {/* Con trỏ cuối cùng nằm ngay sau chữ "Thống" */}
+      {/* Con trỏ cuối cùng */}
       {cursorIndex >= totalLetters && (
         <motion.span
-          className="inline-block h-[60px] w-[4px] bg-black"
+          className={` ${
+            ui === "about"
+              ? "bg-white h-[10px] sm:h-[15px] lg:h-[35px]"
+              : "bg-black h-[40px] sm:h-[55px]"
+          } inline-block  w-[4px]`}
           animate={{ opacity: [1, 0] }}
           transition={{
             repeat: Infinity,

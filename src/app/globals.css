@@ -72,17 +72,6 @@ body {
   font-style: normal;
 }
 
-.custom-menu-root .ant-menu-item-selected {
-  color: var(--primary); /* Màu chữ */
-  background-color: var(--third); /* Màu nền */
-  border-radius: 8px; /* Bo góc */
-}
-
-.custom-menu-root .ant-menu-item:hover {
-  color: var(--primary);
-  background-color: var(--secondary);
-}
-
 .ant-carousel .slick-prev,
 .ant-carousel .slick-next,
 .ant-carousel .slick-prev:hover,
@@ -97,14 +86,10 @@ body {
   color: currentColor !important;
 }
 
-.slick-arrow.slick-prev {
-  font-size: 20px !important;
-}
-
 .ant-carousel .slick-next::before {
   color: var(--secondary) !important;
 }
 
-.slick-arrow.slick-next {
-  font-size: 20px !important;
+.ant-modal .ant-modal-content {
+  padding: 0 !important;
 }
