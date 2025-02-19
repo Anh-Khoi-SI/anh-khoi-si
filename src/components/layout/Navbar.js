@@ -263,9 +263,9 @@ export default function Navbar() {
 
             <a
               className=" opacity-80 hover:opacity-100 transition-transform duration-300 text-sm 2xl:text-base"
-              href="tel:0123456789"
+              href="tel:02839970399"
             >
-              (+84) 123 456 789
+              028 399 70 399
             </a>
           </div>
 
