@@ -1,22 +1,15 @@
 import Link from "next/link";
 
-const posts = [
-  { id: 1, title: "Bài viết 1" },
-  { id: 2, title: "Bài viết 2" },
-  { id: 3, title: "Bài viết 3" },
-];
-
 export default function Blog() {
   return (
-    <div className="pt-28">
-      <h1>Danh Sách Bài Viết</h1>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <Link href={`/blog/${post.id}`}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
+    <div className="pt-28 flex flex-col items-center">
+      <h1 className="text-3xl font-bold">Coming Soon</h1>
+      <p className="mt-4 text-lg">
+        Trang này sẽ sớm có nội dung mới. Hãy quay lại sau!
+      </p>
+      <Link href="/" className="mt-6 text-blue-500 hover:underline">
+        Quay lại trang chủ
+      </Link>
     </div>
   );
 }
