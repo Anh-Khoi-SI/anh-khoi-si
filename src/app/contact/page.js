@@ -3,7 +3,7 @@ import ContactSection from "@/components/shared/ContactSection";
 // src/app/contact.js
 export default function Contact() {
   return (
-    <div className="pt-[87px]  px-4">
+    <div className="pt-[87px] px-4">
       <div className="bg-white p-6 rounded-lg shadow-sm">
         <h1 className="text-2xl font-semibold mb-6">Thông Tin Liên Hệ</h1>
 
