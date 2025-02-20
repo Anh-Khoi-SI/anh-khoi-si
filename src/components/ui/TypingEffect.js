@@ -29,11 +29,12 @@ export default function TypingEffect({ text, ui }) {
 
   return (
     <h1
-      className={`${
-        ui === "about"
-          ? " md:text-[17px] lg:text-[26px] xl:text-[38px]"
-          : "text-5xl w-full sm:text-6xl text-left font-bold"
-      } leading-[1.2] `}
+      className={`
+      text-left font-bold leading-[1.2]
+      ${ui === "about" ? "md:text-[17px] lg:text-[26px] xl:text-[38px]" : ""}
+      ${ui === "SysInt" ? "text-3xl sm:text-6xl leading-[0.6]" : ""}
+      ${!["about", "SysInt"].includes(ui) ? "text-5xl w-full sm:text-6xl" : ""}
+    `}
     >
       {text.map((line, lineIndex) => (
         <span key={lineIndex} className="inline">
@@ -58,7 +59,14 @@ export default function TypingEffect({ text, ui }) {
                       ui === "about"
                         ? "bg-white md:h-[20px] lg:h-[35px]"
                         : "bg-black h-[60px]"
-                    } absolute -right-1 top-0  w-[4px]`}
+                    }
+
+                    ${
+                      ui === "SysInt"
+                        ? "bg-white h-[20px] sm:h-[60px] "
+                        : "bg-black h-[60px]"
+                    }
+                     absolute -right-1 top-0  w-[4px]`}
                     animate={{ opacity: [1, 0] }}
                     transition={{
                       repeat: Infinity,
@@ -75,10 +83,12 @@ export default function TypingEffect({ text, ui }) {
               <br className="block sm:hidden" />
             </>
           )}
-          {lineIndex === 0 && ui === "about" && <br className="block" />}
+          {lineIndex === 0 && (ui === "about" || ui === "SysInt") && (
+            <br className="block" />
+          )}
 
           {/* Xuống dòng sau "Hệ Thống" */}
-          {lineIndex === 1 && <br />}
+          {lineIndex === 1 && ui !== "about" && ui !== "SysInt" && <br />}
         </span>
       ))}
       {/* Con trỏ cuối cùng */}
@@ -88,7 +98,14 @@ export default function TypingEffect({ text, ui }) {
             ui === "about"
               ? "bg-white h-[10px] sm:h-[15px] lg:h-[35px]"
               : "bg-black h-[40px] sm:h-[55px]"
-          } inline-block  w-[4px]`}
+          }
+          
+           ${
+             ui === "SysInt"
+               ? "bg-white h-[20px] sm:h-[60px]"
+               : "bg-black h-[40px] sm:h-[55px]"
+           }
+           inline-block  w-[4px]`}
           animate={{ opacity: [1, 0] }}
           transition={{
             repeat: Infinity,

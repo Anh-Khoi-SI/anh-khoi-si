@@ -28,8 +28,8 @@ const footerItems = [
         text: "Địa chỉ: 74/28 Trương Quốc Dung, Phường 10, Quận Phú Nhuận, TP.HCM",
         link: "https://maps.app.goo.gl/bFiENRyY6cftbT5v6",
       },
-      `Điện thoại: (028) 399 70 399`,
-      `Hotline: 0908 30 13 13 (Mr. Trung Trần)`,
+      `Điện thoại: 0908 30 13 13 (Mr. Trung Trần)`,
+      `Hotline: (028) 399 70 399`,
     ],
   },
 ];
