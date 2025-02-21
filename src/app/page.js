@@ -3,7 +3,7 @@
 import TypingEffect from "@/components/ui/TypingEffect";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import PartnerCarousel from "@/components/ui/PartnerCarousel";
+import PartnerCarousel from "@/components/shared/PartnerCarousel";
 import Link from "next/link";
 import { Carousel } from "antd";
 import ContactSection from "@/components/shared/ContactSection";
@@ -40,6 +40,133 @@ const blogPosts = [
     title: "Điện toán đám mây: Những xu hướng mới sẽ rõ nét hơn trong năm 2025",
     image:
       "https://thegioimaychu.vn/blog/wp-content/uploads/2024/12/TheGioiMayChu-Blog-Cloud-Computing.jpg",
+  },
+];
+
+const partners = [
+  {
+    title: "hp",
+    alt: "Partner 1",
+  },
+  {
+    title: "cyberoam",
+    alt: "Partner 2",
+  },
+  {
+    title: "barracuda",
+    alt: "Partner 3",
+  },
+  {
+    title: "a10",
+    alt: "Partner 4",
+  },
+  {
+    title: "f5",
+    alt: "Partner 5",
+  },
+  {
+    title: "ecessa",
+    alt: "Partner 6",
+  },
+  {
+    title: "peplink",
+    alt: "Partner 7",
+  },
+  {
+    title: "polycom",
+    alt: "Partner 8",
+  },
+  {
+    title: "microsoft",
+    alt: "Partner 9",
+  },
+  {
+    title: "adobe",
+    alt: "Partner 10",
+  },
+  {
+    title: "vmware",
+    alt: "Partner 11",
+  },
+  {
+    title: "ibm",
+    alt: "Partner 12",
+  },
+  {
+    title: "autodesk",
+    alt: "Partner 13",
+  },
+  {
+    title: "kaspersky",
+    alt: "Partner 14",
+  },
+  {
+    title: "solaris",
+    alt: "Partner 15",
+  },
+  {
+    title: "eset",
+    alt: "Partner 16",
+  },
+  {
+    title: "mcafee",
+    alt: "Partner 17",
+  },
+  {
+    title: "symantec",
+    alt: "Partner 18",
+  },
+  {
+    title: "aruba",
+    alt: "Partner 19",
+  },
+  {
+    title: "cisco",
+    alt: "Partner 20",
+  },
+  {
+    title: "dell",
+    alt: "Partner 21",
+  },
+  {
+    title: "h3c",
+    alt: "Partner 22",
+  },
+  {
+    title: "ricoh",
+    alt: "Partner 23",
+  },
+  {
+    title: "hpe",
+    alt: "Partner 24",
+  },
+  {
+    title: "lenovo",
+    alt: "Partner 25",
+  },
+  {
+    title: "toshiba",
+    alt: "Partner 26",
+  },
+  {
+    title: "juniper",
+    alt: "Partner 27",
+  },
+  {
+    title: "watchguard",
+    alt: "Partner 28",
+  },
+  {
+    title: "fortinet",
+    alt: "Partner 29",
+  },
+  {
+    title: "astaro",
+    alt: "Partner 30",
+  },
+  {
+    title: "checkpoint",
+    alt: "Partner 31",
   },
 ];
 
@@ -133,21 +260,25 @@ export default function Home() {
                   id: "01",
                   title: "TÍCH HỢP HỆ THỐNG",
                   img: "/banner/system.png",
+                  path: "/system-integration",
                 },
                 {
                   id: "02",
                   title: "CHUYỂN ĐỔI SỐ",
                   img: "/banner/digital.png",
+                  path: "/business-digitalization",
                 },
                 {
                   id: "03",
                   title: "GIẢI PHÁP CLOUD",
                   img: "/banner/cloud.png",
+                  path: "/cloud-solutions",
                 },
               ].map((item, index) => (
-                <div
+                <Link
+                  href={item.path}
                   key={index}
-                  className={`relative overflow-hidden group ${
+                  className={`group relative overflow-hidden group ${
                     item.id === "02" ? "bg-black" : "bg-secondary"
                   }`}
                 >
@@ -158,11 +289,27 @@ export default function Home() {
                     height={500}
                     className="object-cover h-[200px] transition-transform duration-300 group-hover:scale-105 sm:h-[500px]"
                   />
-                  <div className="   flex flex-col justify-end p-4 ">
+                  <div className="flex flex-col justify-end p-4 ">
                     <p className="text-white text-2xl font-bold">{item.id}</p>
                     <p className="text-white text-sm">{item.title}</p>
                   </div>
-                </div>
+                  <div className=" absolute bottom-4 right-6 text-white group-hover:translate-x-2 transition-transform">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                      />
+                    </svg>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -175,7 +322,7 @@ export default function Home() {
           <hr className="w-36 h-[1px] bg-black border-none my-4" />
         </h2>
 
-        <PartnerCarousel />
+        <PartnerCarousel partners={partners} />
       </section>
       {/* About Us Section */}
       <section className="flex flex-col items-center mb-20 ">

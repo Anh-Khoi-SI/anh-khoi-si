@@ -1,5 +1,5 @@
 import ComingSoon from "@/components/shared/ComingSoon";
 
-export default function ServiceCenter() {
+export default function CloudSolutions() {
   return <ComingSoon />;
 }

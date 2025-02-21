@@ -57,14 +57,14 @@ export default function TypingEffect({ text, ui }) {
                   <motion.span
                     className={` ${
                       ui === "about"
-                        ? "bg-white md:h-[20px] lg:h-[35px]"
-                        : "bg-black h-[60px]"
+                        ? "bg-white sm:h-[20px] lg:h-[35px]"
+                        : "bg-black h-[55px]"
                     }
 
                     ${
                       ui === "SysInt"
                         ? "bg-white h-[20px] sm:h-[60px] "
-                        : "bg-black h-[60px]"
+                        : "bg-black h-[55px]"
                     }
                      absolute -right-1 top-0  w-[4px]`}
                     animate={{ opacity: [1, 0] }}
@@ -96,7 +96,7 @@ export default function TypingEffect({ text, ui }) {
         <motion.span
           className={` ${
             ui === "about"
-              ? "bg-white h-[10px] sm:h-[15px] lg:h-[35px]"
+              ? "bg-white h-[10px] sm:h-[20px] lg:h-[35px]"
               : "bg-black h-[40px] sm:h-[55px]"
           }
           
