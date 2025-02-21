@@ -5,15 +5,10 @@ import React from "react";
 const footerItems = [
   {
     title: "VỀ ANH KHÔI",
-    items: [
-      "Giới thiệu công ty",
-      "Thông tin đối tác",
-      "Thông tin tuyển dụng",
-      "Thông tin liên hệ",
-    ],
+    items: ["Giới thiệu công ty", "Thông tin đối tác", "Thông tin liên hệ"],
   },
   {
-    title: "Chính sách công ty",
+    title: "GIẢI PHÁP",
     items: [
       "Chính sách bảo mật",
       "Điều khoản sử dụng",

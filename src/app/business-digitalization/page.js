@@ -1,14 +1,16 @@
 import ContactSection from "@/components/shared/ContactSection";
-import PartnerCarousel from "@/components/shared/PartnerCarousel";
 import TypingEffect from "@/components/ui/TypingEffect";
 import Image from "next/image";
 import Link from "next/link";
+import PartnerCarousel from "@/components/shared/PartnerCarousel";
+
 const text = ["Công nghệ tối ưu", "Giải pháp vượt trội"];
+
 const services = [
   {
     id: "01",
-    title: "DC Infrastructure Solution",
-    path: "/system-integration/dc-infra-solution",
+    title: "DC SDN Solution",
+    path: "/business-digitalization/dc-sdn-solution",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -25,12 +27,12 @@ const services = [
         />
       </svg>
     ),
-    description: "Hạ tầng trung tâm dữ liệu",
+    description: "Mạng định nghĩa bằng phần mềm cho Data Center",
   },
   {
     id: "02",
-    title: "Mạng Doanh Nghiệp",
-    path: "/system-integration/enterprise-network",
+    title: "DC Switching Solution",
+    path: "/business-digitalization/dc-switching-solution",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -43,16 +45,16 @@ const services = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
+          d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"
         />
       </svg>
     ),
-    description: "Campus, Enterprise, ISP, SMB",
+    description: "Chuyển mạch trung tâm dữ liệu",
   },
   {
     id: "03",
-    title: "Mạng Quang",
-    path: "/system-integration/optical-network",
+    title: "Wifi - Mạng không dây",
+    path: "/business-digitalization/wifi-wireless-network",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -69,12 +71,12 @@ const services = [
         />
       </svg>
     ),
-    description: "Access Network, Data Center, WDM, 5G",
+    description: "SMB, Campus, Hotels, Industrial",
   },
   {
     id: "04",
-    title: "Máy Chủ - Lưu Trữ",
-    path: "/system-integration/server-storage",
+    title: "Bảo Mật Mạng",
+    path: "/business-digitalization/network-security",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -87,31 +89,32 @@ const services = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
+          d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
         />
       </svg>
     ),
-    description: "Intel/Unix Servers, Enterprise Storage",
+    description:
+      "Network Intrusion Prevention, Mail Security Solution, Web Application Firewall, NGFW",
   },
 ];
 
-const systemIntegration = {
-  title: "Lợi Ích Tích Hợp Hệ Thống",
+const businessDigitalization = {
+  title: "Lợi Ích Chuyển Đổi Số",
   benefits: [
     {
-      title: "Tối ưu vận hành & bảo mật",
+      title: "Tối ưu vận hành & hiệu suất",
       description:
-        "Giúp tinh gọn quy trình, rút ngắn thời gian quản lý, giảm rủi ro và bảo vệ hệ thống trước các mối đe dọa.",
+        "Giúp doanh nghiệp tinh gọn quy trình, giảm thiểu sai sót, nâng cao năng suất và hiệu quả hoạt động.",
     },
     {
-      title: "Tiết kiệm chi phí & đầu tư linh hoạt",
+      title: "Gia tăng lợi thế cạnh tranh",
       description:
-        "Chọn công nghệ phù hợp, tối ưu tài nguyên và triển khai theo từng giai đoạn để đạt hiệu quả cao nhất.",
+        "Tận dụng công nghệ số để đổi mới mô hình kinh doanh, cải thiện trải nghiệm khách hàng và mở rộng thị trường.",
     },
     {
-      title: "Năng lực triển khai quyết định thành công",
+      title: "Thích ứng linh hoạt & bền vững",
       description:
-        "Chất lượng tích hợp phụ thuộc vào đơn vị cung cấp, tạo ra sự khác biệt vượt trội.",
+        "Chuyển đổi số giúp doanh nghiệp dễ dàng thích nghi với xu hướng công nghệ, tối ưu chi phí và phát triển bền vững.",
     },
   ],
 };
@@ -157,9 +160,33 @@ const partners = [
     title: "watchguard",
     alt: "Partner 10",
   },
+  {
+    title: "checkpoint",
+    alt: "Partner 11",
+  },
+  {
+    title: "symantec",
+    alt: "Partner 12",
+  },
+  {
+    title: "mcafee",
+    alt: "Partner 13",
+  },
+  {
+    title: "kaspersky",
+    alt: "Partner 14",
+  },
+  {
+    title: "eset",
+    alt: "Partner 15",
+  },
+  {
+    title: "cyberoam",
+    alt: "Partner 16",
+  },
 ];
 
-export default function SystemIntergration() {
+export default function BusinessDigitalization() {
   return (
     <>
       {/* Hero Section */}
@@ -173,11 +200,11 @@ export default function SystemIntergration() {
               <div className="flex">
                 <div className="h-full sm:h-[500px] relative w-full">
                   <Image
-                    src="https://res.cloudinary.com/anh-khoi/image/upload/v1740020454/banner/system-integration.png"
+                    src="https://res.cloudinary.com/anh-khoi/image/upload/v1740105021/banner/business-digitalization.png"
                     fill
                     priority
                     alt="si-banner"
-                    className=" object-cover"
+                    className="object-cover"
                   />
                 </div>
 
@@ -189,10 +216,10 @@ export default function SystemIntergration() {
                     md:px-10 
                     lg:px-20 lg:text-xl"
                   >
-                    Tích hợp hệ thống là quá trình kết nối các hệ thống con,
-                    phần mềm và thiết bị khác nhau thành một hệ thống hoàn
-                    chỉnh, giúp tối ưu hóa vận hành, tăng giá trị hệ thống mẹ và
-                    đáp ứng nhu cầu công nghệ theo cách tùy biến.
+                    Với sự am hiểu sâu sắc về công nghệ và quy trình kinh doanh,
+                    chúng tôi tư vấn và triển khai các chiến lược chuyển đổi số
+                    phù hợp. Giúp doanh nghiệp tối ưu vận hành, nâng cao hiệu
+                    suất và tận dụng lợi thế của kỷ nguyên số hóa.
                     <div className="absolute bottom-6 left-6 sm:flex hidden">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -217,14 +244,15 @@ export default function SystemIntergration() {
                   </div>
                   <p
                     className="bg-primary  flex items-center justify-center h-full text-black font-base
-                    px-6 text-sm py-10
-                    sm:text-base sm:py-0
-                    md:px-10 
-                    lg:px-20 lg:text-xl
-                   "
+                  px-6 text-sm py-10
+                  sm:text-base sm:py-0
+                  md:px-10 
+                  lg:px-20 lg:text-xl
+                 "
                   >
-                    Giúp doanh nghiệp tinh gọn quy trình, giảm rủi ro, tiết kiệm
-                    chi phí và tối ưu đầu tư theo từng giai đoạn.
+                    Chúng tôi cung cấp các giải pháp hạ tầng và bảo mật tiên
+                    tiến, đảm bảo hệ thống luôn ổn định, an toàn trước mọi thách
+                    thức.
                   </p>
                 </div>
               </div>
@@ -289,18 +317,18 @@ export default function SystemIntergration() {
           {/* Ảnh luôn giãn ra theo kích thước */}
           <Image
             src="https://res.cloudinary.com/anh-khoi/image/upload/v1740027341/banner/quote-banner.png"
-            layout="fill"
-            objectFit="cover"
+            fill
             priority
+            className=" object-cover"
             alt="quote-banner"
           />
           {/* Nội dung văn bản */}
           <div className="absolute z-30 text-white px-4 sm:px-8 py-6 bg-black/50 rounded-lg max-w-[90%] md:max-w-[70%]">
             <h2 className="text-lg sm:text-2xl font-semibold mb-3 text-center">
-              {systemIntegration.title}
+              {businessDigitalization.title}
             </h2>
             <ul className="space-y-2 text-xs sm:text-base">
-              {systemIntegration.benefits.map((benefit, index) => (
+              {businessDigitalization.benefits.map((benefit, index) => (
                 <li key={index}>
                   <span className="font-medium">{benefit.title}:</span>{" "}
                   {benefit.description}

@@ -79,7 +79,7 @@ export default function ContactSection() {
     <>
       {contextHolder}
 
-      <section className="flex flex-col items-center mb-20 relative">
+      <section className="flex flex-col items-center mb-20 relative w-full">
         {loading && (
           <div className="top-0 bottom-0 right-0 left-0 absolute flex items-center justify-center bg-black bg-opacity-50 z-50">
             <Spin indicator={<LoadingOutlined spin />} size="large" />

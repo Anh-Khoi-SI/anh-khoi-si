@@ -18,30 +18,72 @@ const serviceItems = [
   {
     key: "1",
     label: (
-      <Link
-        target="_blank"
-        rel="noopener noreferrer"
-        href="/system-integration"
-      >
+      <Link rel="noopener noreferrer" href="/system-integration">
         Giải Pháp Tích Hợp Hệ Thống
       </Link>
     ),
+    children: [
+      {
+        key: "1-1",
+        label: "DC Infrastructure Solution",
+      },
+      {
+        key: "1-2",
+        label: "Mạng Doanh Nghiệp",
+      },
+      {
+        key: "1-3",
+        label: "Mạng Quang",
+      },
+      {
+        key: "1-4",
+        label: "Máy Chủ - Lưu Trữ",
+      },
+    ],
   },
   {
     key: "2",
     label: (
-      <Link target="_blank" rel="noopener noreferrer" href="/service-center">
-        Trung Tâm Dịch Vụ
+      <Link rel="noopener noreferrer" href="/business-digitalization">
+        Chuyển Đổi Số
       </Link>
     ),
+    children: [
+      {
+        key: "2-1",
+        label: "DC SDN Solution",
+      },
+      {
+        key: "2-2",
+        label: "Wifi - Mạng không dây",
+      },
+      {
+        key: "2-3",
+        label: "Bảo Mật Mạng",
+      },
+    ],
   },
   {
     key: "3",
     label: (
-      <Link target="_blank" rel="noopener noreferrer" href="/blog">
-        Tin Tức Giải Pháp
+      <Link rel="noopener noreferrer" href="/cloud-solutions">
+        Giải Pháp Cloud
       </Link>
     ),
+    children: [
+      {
+        key: "3-1",
+        label: "Enterprise Data Storage",
+      },
+      {
+        key: "3-2",
+        label: "DC Switching Solution",
+      },
+      {
+        key: "3-3",
+        label: "Bảo Mật Mạng",
+      },
+    ],
   },
 ];
 
@@ -61,14 +103,6 @@ export default function Navbar() {
       setCurrent(activeItem.key);
     }
   }, [pathname]);
-
-  useEffect(() => {
-    const activeElement = document.querySelector(`[data-key="${current}"]`);
-    if (activeElement && menuRef.current) {
-      const { offsetLeft, offsetWidth } = activeElement;
-      setUnderlineStyle({ left: offsetLeft, width: offsetWidth });
-    }
-  }, [current]);
 
   const handleCloseMenu = () => {
     setMenuOpen(false);
@@ -97,19 +131,34 @@ export default function Navbar() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  const [disableUnderline, setDisableUnderline] = useState(false);
 
   useEffect(() => {
     const activeItem = menuItems.find((item) => item.href === pathname);
     if (activeItem) {
       setCurrent(activeItem.key);
+      setDisableUnderline(false); // Cho phép underline khi có item chính xác
     } else if (
-      pathname === "/service-center" ||
-      pathname === "/system-integration" ||
-      pathname === "/blog"
+      pathname.startsWith("/business-digitalization") ||
+      pathname.startsWith("/system-integration") ||
+      pathname.startsWith("/cloud-solutions")
     ) {
       setCurrent("service"); // Đặt current cho mục "Dịch vụ"
+      setDisableUnderline(true); // Tắt hiệu ứng underline
     }
   }, [pathname]);
+
+  useEffect(() => {
+    if (current === "service") {
+      setUnderlineStyle({ left: 0, width: 0 }); // Ẩn underline
+      return;
+    }
+    const activeElement = document.querySelector(`[data-key="${current}"]`);
+    if (activeElement && menuRef.current) {
+      const { offsetLeft, offsetWidth } = activeElement;
+      setUnderlineStyle({ left: offsetLeft, width: offsetWidth });
+    }
+  }, [current, disableUnderline]); // Thêm disableUnderline vào dependency để cập nhật khi cần
 
   return (
     <div
@@ -192,7 +241,7 @@ export default function Navbar() {
                     : "text-gray-600"
                 } gap-2 text-sm font-regular z-10 relative lg:text-sm xl:text-lg  cursor-pointer pb-2  hover:text-black flex items-center `}
               >
-                Dịch vụ
+                Dịch vụ - Giải pháp
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -452,7 +501,7 @@ export default function Navbar() {
                   className={`w-full items-center p-6 flex justify-between bg-lightbackground cursor-pointer `}
                   onClick={() => setServiceOpen(!serviceOpen)}
                 >
-                  Dịch Vụ
+                  Dịch Vụ và Giải Pháp
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
