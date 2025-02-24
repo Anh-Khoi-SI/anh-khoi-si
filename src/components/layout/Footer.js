@@ -36,7 +36,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <img src="/logo/anhkhoi-pri.png" className="w-20" />
+              <img
+                src="/logo/anhkhoi-pri.png"
+                className="w-20"
+                alt="logo-footer"
+              />
               <h1 className="text-lg font-bold text-primary">
                 CÔNG TY CỔ PHẦN TÍCH HỢP HỆ THỐNG ANH KHÔI
               </h1>

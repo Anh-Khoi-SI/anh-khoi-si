@@ -4,7 +4,7 @@ import ContactSection from "@/components/shared/ContactSection";
 
 const text = ["Giải pháp công nghệ", "Nâng tầm doanh nghiệp"];
 
-export default function About() {
+const About = () => {
   return (
     <div className="">
       {/* Top Section */}
@@ -355,4 +355,6 @@ export default function About() {
       <ContactSection />
     </div>
   );
-}
+};
+
+export default About;

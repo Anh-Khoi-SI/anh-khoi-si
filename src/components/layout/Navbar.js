@@ -17,71 +17,78 @@ const menuItems = [
 const serviceItems = [
   {
     key: "1",
-    label: (
-      <Link rel="noopener noreferrer" href="/system-integration">
-        Giải Pháp Tích Hợp Hệ Thống
-      </Link>
-    ),
+    label: <div className="text-black">Giải Pháp Tích Hợp Hệ Thống</div>,
+    href: "/system-integration",
     children: [
       {
         key: "1-1",
         label: "DC Infrastructure Solution",
+        href: "/system-integration/dc-infra-solution", // Thêm link
       },
       {
         key: "1-2",
         label: "Mạng Doanh Nghiệp",
+        href: "/system-integration/network-business", // Thêm link
       },
       {
         key: "1-3",
         label: "Mạng Quang",
+        href: "/system-integration/fiber-network", // Thêm link
       },
       {
         key: "1-4",
         label: "Máy Chủ - Lưu Trữ",
+        href: "/system-integration/server-storage", // Thêm link
       },
     ],
   },
   {
     key: "2",
-    label: (
-      <Link rel="noopener noreferrer" href="/business-digitalization">
-        Chuyển Đổi Số
-      </Link>
-    ),
+    label: <div className="text-black">Chuyển Đổi Số</div>,
+    href: "/business-digitalization",
+
     children: [
       {
         key: "2-1",
         label: "DC SDN Solution",
+        href: "/business-digitalization/dc-sdn-solution",
       },
       {
         key: "2-2",
         label: "Wifi - Mạng không dây",
+        href: "/business-digitalization/wifi-wireless-network",
       },
       {
         key: "2-3",
         label: "Bảo Mật Mạng",
+        href: "/business-digitalization/network-security",
+      },
+      {
+        key: "2-4",
+        label: "DC Switching Solution",
+        href: "/business-digitalization/dc-switching-solution",
       },
     ],
   },
   {
     key: "3",
-    label: (
-      <Link rel="noopener noreferrer" href="/cloud-solutions">
-        Giải Pháp Cloud
-      </Link>
-    ),
+    label: <div className="text-black">Giải Pháp Cloud</div>,
+    href: "/cloud-solutions",
     children: [
       {
         key: "3-1",
         label: "Enterprise Data Storage",
+        href: "/#",
       },
       {
         key: "3-2",
         label: "DC Switching Solution",
+        href: "/#",
       },
       {
         key: "3-3",
         label: "Bảo Mật Mạng",
+        href: "/#",
       },
     ],
   },
@@ -106,6 +113,7 @@ export default function Navbar() {
 
   const handleCloseMenu = () => {
     setMenuOpen(false);
+    setServiceOpen(false);
   };
 
   const [scrollY, setScrollY] = useState(0);
@@ -223,18 +231,25 @@ export default function Navbar() {
               },
               components: {
                 Dropdown: {
-                  paddingBlock: 16,
+                  paddingBlock: 26,
                 },
               },
             }}
           >
             <Dropdown
               menu={{
-                items: serviceItems,
+                items: serviceItems.map((item) => ({
+                  key: item.key,
+                  label: <Link href={item.href}>{item.label}</Link>,
+                  children: item.children.map((child) => ({
+                    key: child.key,
+                    label: <Link href={child.href}>{child.label}</Link>,
+                  })),
+                })),
               }}
               trigger={["hover"]}
             >
-              <a
+              <div
                 className={`${
                   current === "service"
                     ? "text-black border-b-[2px] border-primary "
@@ -256,7 +271,7 @@ export default function Navbar() {
                     d="m19.5 8.25-7.5 7.5-7.5-7.5"
                   />
                 </svg>
-              </a>
+              </div>
             </Dropdown>
           </ConfigProvider>
         </div>
@@ -482,9 +497,7 @@ export default function Navbar() {
                   boxShadowSecondary: 0,
                 },
                 components: {
-                  Dropdown: {
-                    paddingBlock: 16,
-                  },
+                  Dropdown: {},
                 },
               }}
             >
@@ -492,13 +505,21 @@ export default function Navbar() {
                 menu={{
                   items: serviceItems.map((item) => ({
                     key: item.key,
-                    label: item.label,
+                    label: (
+                      <Link
+                        onClick={handleCloseMenu}
+                        className="w-full flex px-6 py-4 items-center"
+                        href={item.href}
+                      >
+                        {item.label}
+                      </Link>
+                    ),
                   })),
                 }}
                 trigger={["click"]}
               >
                 <div
-                  className={`w-full items-center p-6 flex justify-between bg-lightbackground cursor-pointer `}
+                  className={`w-full items-center p-6 flex justify-between bg-lightbackground cursor-pointer relative `}
                   onClick={() => setServiceOpen(!serviceOpen)}
                 >
                   Dịch Vụ và Giải Pháp

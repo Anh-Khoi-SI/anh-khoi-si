@@ -202,7 +202,6 @@ export default function BusinessDigitalization() {
                   <Image
                     src="https://res.cloudinary.com/anh-khoi/image/upload/v1740105021/banner/business-digitalization.png"
                     fill
-                    priority
                     alt="si-banner"
                     className="object-cover"
                   />
@@ -318,7 +317,6 @@ export default function BusinessDigitalization() {
           <Image
             src="https://res.cloudinary.com/anh-khoi/image/upload/v1740027341/banner/quote-banner.png"
             fill
-            priority
             className=" object-cover"
             alt="quote-banner"
           />
