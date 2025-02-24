@@ -1,5 +1,5 @@
 import ComingSoon from "@/components/shared/ComingSoon";
 
-export default function OpticalNetwork() {
+export default function NetworkBusiness() {
   return <ComingSoon />;
 }

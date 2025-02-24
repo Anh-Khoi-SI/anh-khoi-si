@@ -174,7 +174,7 @@ const text = ["Giải Pháp ", "Tích Hợp", "Hệ Thống"];
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef(null); // Tạo ref cho carousel
+  const carouselRef = useRef(null);
   const nextIndex = (currentIndex + 1) % blogPosts.length;
 
   const nextSlide = () => {
@@ -214,6 +214,7 @@ export default function Home() {
           <TypingEffect text={text} />
         </div>
       </section>
+
       {/* Services Section */}
       <section className="w-full relative mb-40 bg-lightbackground">
         <div className="flex w-full h-[300px] sm:h-[650px]">

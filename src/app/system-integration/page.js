@@ -4,6 +4,7 @@ import TypingEffect from "@/components/ui/TypingEffect";
 import Image from "next/image";
 import Link from "next/link";
 const text = ["Công nghệ tối ưu", "Giải pháp vượt trội"];
+
 const services = [
   {
     id: "01",
@@ -30,7 +31,7 @@ const services = [
   {
     id: "02",
     title: "Mạng Doanh Nghiệp",
-    path: "/system-integration/enterprise-network",
+    path: "/system-integration/network-business",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +53,7 @@ const services = [
   {
     id: "03",
     title: "Mạng Quang",
-    path: "/system-integration/optical-network",
+    path: "/system-integration/fiber-network",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -159,6 +160,9 @@ const partners = [
   },
 ];
 
+const bannerImage =
+  "https://res.cloudinary.com/anh-khoi/image/upload/v1740020454/banner/system-integration.png";
+
 export default function SystemIntergration() {
   return (
     <>
@@ -173,9 +177,8 @@ export default function SystemIntergration() {
               <div className="flex">
                 <div className="h-full sm:h-[500px] relative w-full">
                   <Image
-                    src="https://res.cloudinary.com/anh-khoi/image/upload/v1740020454/banner/system-integration.png"
+                    src={bannerImage}
                     fill
-                    priority
                     alt="si-banner"
                     className=" object-cover"
                   />
@@ -291,8 +294,8 @@ export default function SystemIntergration() {
             src="https://res.cloudinary.com/anh-khoi/image/upload/v1740027341/banner/quote-banner.png"
             layout="fill"
             objectFit="cover"
-            priority
             alt="quote-banner"
+            loading="lazy"
           />
           {/* Nội dung văn bản */}
           <div className="absolute z-30 text-white px-4 sm:px-8 py-6 bg-black/50 rounded-lg max-w-[90%] md:max-w-[70%]">
