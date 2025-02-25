@@ -110,22 +110,34 @@ const tagline = "Anh Khôi";
 //   },
 // };
 
+// export const metadata = {
+//   title: "Anh Khôi | Công Ty CP Tích Hợp Hệ Thống Anh Khôi",
+//   description: "Chúng tôi cung cấp các giải pháp tích hợp hệ thống đa dạng...",
+//   openGraph: {
+//     type: "website", // 🛑 THÊM type
+//     url: "https://anh-khoi-si.vercel.app/", // 🛑 THÊM URL trang
+//     title: "Anh Khôi | Công Ty CP Tích Hợp Hệ Thống Anh Khôi",
+//     description:
+//       "Chúng tôi cung cấp các giải pháp tích hợp hệ thống đa dạng...",
+//     siteName: "Anh Khôi",
+//     images: [
+//       {
+//         url: "https://res.cloudinary.com/anh-khoi/image/upload/v1739851704/banner/Thiết_kế_chưa_có_tên_5_ba4vb7.png",
+//         width: 1200,
+//         height: 630,
+//         alt: "Anh Khôi - Giải pháp hệ thống",
+//       },
+//     ],
+//   },
+// };
+
 export const metadata = {
-  title: "Anh Khôi | Công Ty CP Tích Hợp Hệ Thống Anh Khôi",
-  description: "Chúng tôi cung cấp các giải pháp tích hợp hệ thống đa dạng...",
   openGraph: {
-    type: "website", // 🛑 THÊM type
-    url: "https://anh-khoi-si.vercel.app/", // 🛑 THÊM URL trang
-    title: "Anh Khôi | Công Ty CP Tích Hợp Hệ Thống Anh Khôi",
-    description:
-      "Chúng tôi cung cấp các giải pháp tích hợp hệ thống đa dạng...",
-    siteName: "Anh Khôi",
     images: [
       {
         url: "https://res.cloudinary.com/anh-khoi/image/upload/v1739851704/banner/Thiết_kế_chưa_có_tên_5_ba4vb7.png",
         width: 1200,
         height: 630,
-        alt: "Anh Khôi - Giải pháp hệ thống",
       },
     ],
   },
