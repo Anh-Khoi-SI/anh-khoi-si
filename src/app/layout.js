@@ -133,6 +133,10 @@ const tagline = "Anh Khôi";
 
 export const metadata = {
   openGraph: {
+    title: "Anh Khôi | Công Ty CP Tích Hợp Hệ Thống Anh Khôi",
+    description:
+      "Chúng tôi cung cấp các giải pháp tích hợp hệ thống đa dạng...",
+    siteName: "Anh Khôi",
     images: [
       {
         url: "https://res.cloudinary.com/anh-khoi/image/upload/v1739851704/banner/Thiết_kế_chưa_có_tên_5_ba4vb7.png",
