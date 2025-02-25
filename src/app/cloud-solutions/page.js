@@ -103,55 +103,55 @@ const cloudSolutions = {
 
 const partners = [
   {
-    title: "hpe",
+    title: "hp",
     alt: "Partner 1",
   },
   {
-    title: "dell",
+    title: "cyberoam",
     alt: "Partner 2",
   },
   {
-    title: "ibm",
+    title: "barracuda",
     alt: "Partner 3",
   },
   {
-    title: "lenovo",
+    title: "a10",
     alt: "Partner 4",
   },
   {
-    title: "cisco",
+    title: "f5",
     alt: "Partner 5",
   },
   {
-    title: "h3c",
+    title: "ecessa",
     alt: "Partner 6",
   },
   {
-    title: "juniper",
+    title: "peplink",
     alt: "Partner 7",
   },
   {
-    title: "aruba",
+    title: "polycom",
     alt: "Partner 8",
   },
   {
-    title: "fortinet",
+    title: "microsoft",
     alt: "Partner 9",
   },
   {
-    title: "watchguard",
+    title: "adobe",
     alt: "Partner 10",
   },
   {
-    title: "checkpoint",
+    title: "vmware",
     alt: "Partner 11",
   },
   {
-    title: "symantec",
+    title: "ibm",
     alt: "Partner 12",
   },
   {
-    title: "mcafee",
+    title: "autodesk",
     alt: "Partner 13",
   },
   {
@@ -159,12 +159,72 @@ const partners = [
     alt: "Partner 14",
   },
   {
-    title: "eset",
+    title: "solaris",
     alt: "Partner 15",
   },
   {
-    title: "cyberoam",
+    title: "eset",
     alt: "Partner 16",
+  },
+  {
+    title: "mcafee",
+    alt: "Partner 17",
+  },
+  {
+    title: "symantec",
+    alt: "Partner 18",
+  },
+  {
+    title: "aruba",
+    alt: "Partner 19",
+  },
+  {
+    title: "cisco",
+    alt: "Partner 20",
+  },
+  {
+    title: "dell",
+    alt: "Partner 21",
+  },
+  {
+    title: "h3c",
+    alt: "Partner 22",
+  },
+  {
+    title: "ricoh",
+    alt: "Partner 23",
+  },
+  {
+    title: "hpe",
+    alt: "Partner 24",
+  },
+  {
+    title: "lenovo",
+    alt: "Partner 25",
+  },
+  {
+    title: "toshiba",
+    alt: "Partner 26",
+  },
+  {
+    title: "juniper",
+    alt: "Partner 27",
+  },
+  {
+    title: "watchguard",
+    alt: "Partner 28",
+  },
+  {
+    title: "fortinet",
+    alt: "Partner 29",
+  },
+  {
+    title: "astaro",
+    alt: "Partner 30",
+  },
+  {
+    title: "checkpoint",
+    alt: "Partner 31",
   },
 ];
 

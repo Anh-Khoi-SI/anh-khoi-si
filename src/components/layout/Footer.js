@@ -5,7 +5,11 @@ import React from "react";
 const footerItems = [
   {
     title: "VỀ ANH KHÔI",
-    items: ["Giới thiệu công ty", "Thông tin đối tác", "Thông tin liên hệ"],
+    items: [
+      { title: "Giới thiệu công ty", href: "/about" },
+      { title: "Thông tin đối tác", href: "/about" },
+      { title: "Thông tin liên hệ", href: "/about" },
+    ],
   },
   {
     title: "GIẢI PHÁP",
@@ -67,7 +71,7 @@ export default function Footer() {
                       }
                     }}
                   >
-                    {typeof item === "object" ? item.text : item}
+                    {typeof item === "object" ? item.title : item}
                   </span>
                 ))}
               </div>

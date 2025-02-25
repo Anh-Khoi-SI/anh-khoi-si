@@ -197,19 +197,20 @@ export default function Navbar() {
         <div
           className={`flex-col md:flex-row items-center gap-6 mt-4 md:mt-0 lg:flex hidden`}
         >
-          <ul
+          <div
             ref={menuRef}
             className="flex gap-6 text-sm font-regular z-10 relative lg:text-sm xl:text-lg "
           >
             {menuItems.map((item) => (
-              <Link key={item.key} href={item.href} data-key={item.key}>
-                <li
-                  className={`cursor-pointer pb-2 ${
-                    current === item.key ? "text-black" : "text-gray-600"
-                  }`}
-                >
-                  {item.label}
-                </li>
+              <Link
+                key={item.key}
+                href={item.href}
+                data-key={item.key}
+                className={`cursor-pointer pb-2 ${
+                  current === item.key ? "text-black" : "text-gray-600"
+                }`}
+              >
+                {item.label}
               </Link>
             ))}
             <div
@@ -219,7 +220,7 @@ export default function Navbar() {
                 left: underlineStyle.left,
               }}
             ></div>
-          </ul>
+          </div>
 
           <ConfigProvider
             theme={{
@@ -231,7 +232,7 @@ export default function Navbar() {
               },
               components: {
                 Dropdown: {
-                  paddingBlock: 26,
+                  paddingBlock: 18,
                 },
               },
             }}

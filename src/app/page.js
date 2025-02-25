@@ -480,7 +480,13 @@ export default function Home() {
           </div>
         </div>
         <div className="relative overflow-hidden h-[80px] xs:h-[100px] sm:h-[150px] md:h-[200px] lg:h-[250px] xl:h-[300px] 2xl:h-[350px] ">
-          <Carousel dots={false} slidesToShow={2} ref={carouselRef} infinite>
+          <Carousel
+            dots={false}
+            slidesToShow={2}
+            ref={carouselRef}
+            infinite
+            id="slideBlog"
+          >
             {blogPosts.map((post, index) => {
               const nextPostIndex = (index + 1) % blogPosts.length;
               return (
@@ -515,6 +521,7 @@ export default function Home() {
               <button
                 onClick={prevSlide}
                 className=" left-0 transform p-4 group"
+                aria-labelledby="slideBlog"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -535,6 +542,7 @@ export default function Home() {
               <button
                 onClick={nextSlide}
                 className="right-0 top-0 transform p-4 bg-primary group"
+                aria-labelledby="slideBlog"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
