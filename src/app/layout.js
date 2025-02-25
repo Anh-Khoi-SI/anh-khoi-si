@@ -140,13 +140,8 @@ export const metadata = {
     description:
       "Chúng tôi cung cấp các giải pháp tích hợp hệ thống đa dạng...",
     siteName: "Anh Khôi",
-    images: [
-      {
-        url: "https://res.cloudinary.com/anh-khoi/image/upload/v1739851704/banner/Thiết_kế_chưa_có_tên_5_ba4vb7.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
+    images:
+      "https://res.cloudinary.com/anh-khoi/image/upload/v1739851704/banner/Thiết_kế_chưa_có_tên_5_ba4vb7.png",
   },
 };
 
