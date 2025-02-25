@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { getCldOgImageUrl } from "next-cloudinary";
 
 const publicId = "banner/Thiết_kế_chưa_có_tên_5_ba4vb7";
-const headline = "Anh Khôi";
+const headline = "CÔNG TY CỔ PHẦN TÍCH HỢP HỆ THỐNG ANH KHÔI";
 const logoPublicId = "anhkhoi-logo/wnw0kekvmfa1f8ez6yyu";
 const tagline = "Anh Khôi";
 
