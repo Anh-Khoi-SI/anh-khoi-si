@@ -132,6 +132,9 @@ const tagline = "Anh Khôi";
 // };
 
 export const metadata = {
+  title: "Anh Khôi | Công Ty CP Tích Hợp Hệ Thống Anh Khôi",
+  description: "Chúng tôi cung cấp các giải pháp tích hợp hệ thống đa dạng...",
+  url: "https://anhkhoi.com.vn",
   openGraph: {
     title: "Anh Khôi | Công Ty CP Tích Hợp Hệ Thống Anh Khôi",
     description:
