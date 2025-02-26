@@ -18,7 +18,7 @@ const serviceItems = [
   {
     key: "1",
     label: <div className="text-black">Giải Pháp Tích Hợp Hệ Thống</div>,
-    href: "/system-integration",
+    href: "/services/system-integration",
     children: [
       {
         key: "1-1",
@@ -45,7 +45,7 @@ const serviceItems = [
   {
     key: "2",
     label: <div className="text-black">Chuyển Đổi Số</div>,
-    href: "/business-digitalization",
+    href: "/services/business-digitalization",
 
     children: [
       {
@@ -73,7 +73,7 @@ const serviceItems = [
   {
     key: "3",
     label: <div className="text-black">Giải Pháp Cloud</div>,
-    href: "/cloud-solutions",
+    href: "/services/cloud-solutions",
     children: [
       {
         key: "3-1",
@@ -146,11 +146,7 @@ export default function Navbar() {
     if (activeItem) {
       setCurrent(activeItem.key);
       setDisableUnderline(false); // Cho phép underline khi có item chính xác
-    } else if (
-      pathname.startsWith("/business-digitalization") ||
-      pathname.startsWith("/system-integration") ||
-      pathname.startsWith("/cloud-solutions")
-    ) {
+    } else if (pathname.startsWith("/services")) {
       setCurrent("service"); // Đặt current cho mục "Dịch vụ"
       setDisableUnderline(true); // Tắt hiệu ứng underline
     }
