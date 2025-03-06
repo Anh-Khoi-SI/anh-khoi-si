@@ -103,10 +103,10 @@ export default function ServiceDetailPage() {
       <section className="pt-12 flex justify-center">
         <div className="max-w-[1300px] grid grid-cols-1 md:grid-cols-2 gap-4">
           {servicesData.map((service, index) => (
-            <Link
+            <div
               key={index}
-              href={`${pathname}/${service.slug}`}
-              className="group w-full flex flex-col sm:flex-row py-20 hover:bg-lightbackground transition-all duration-300 cursor-pointer relative bg-lightbackground"
+              // href={`${pathname}/${service.slug}`}
+              className="group w-full flex flex-col sm:flex-row py-20 hover:bg-lightbackground transition-all duration-300 relative bg-lightbackground"
             >
               <div className="px-10">{service.icon}</div>
               <div className="flex flex-col sm:pr-20 gap-2 px-10 pt-10 sm:pt-0 sm:px-0">
@@ -118,7 +118,7 @@ export default function ServiceDetailPage() {
               </div>
 
               {/* Mũi tên chỉ hiện khi hover */}
-              <div className="absolute top-4 right-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center gap-4">
+              {/* <div className="absolute top-4 right-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center gap-4">
                 Xem Ngay
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -134,8 +134,8 @@ export default function ServiceDetailPage() {
                     d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
                   />
                 </svg>
-              </div>
-            </Link>
+              </div> */}
+            </div>
           ))}
         </div>
       </section>
