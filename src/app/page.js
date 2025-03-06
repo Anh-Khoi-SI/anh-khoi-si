@@ -261,19 +261,19 @@ export default function Home() {
                   id: "01",
                   title: "TÍCH HỢP HỆ THỐNG",
                   img: "/banner/system.png",
-                  path: "/system-integration",
+                  path: "/services/system-integration",
                 },
                 {
                   id: "02",
                   title: "CHUYỂN ĐỔI SỐ",
                   img: "/banner/digital.png",
-                  path: "/business-digitalization",
+                  path: "/services/business-digitalization",
                 },
                 {
                   id: "03",
                   title: "GIẢI PHÁP CLOUD",
                   img: "/banner/cloud.png",
-                  path: "/cloud-solutions",
+                  path: "/services/cloud-solutions",
                 },
               ].map((item, index) => (
                 <Link
@@ -317,7 +317,7 @@ export default function Home() {
         </div>
       </section>
       {/* Partner Section */}
-      <section className="flex flex-col items-center justify-center w-full mb-20 max-w-[1200px]">
+      <section className="flex flex-col items-center justify-center w-full mb-20">
         <h2 className="text-center  font-bold flex flex-col gap-2 items-center md:text-4xl text-2xl">
           Đối Tác Của Chúng Tôi
           <hr className="w-36 h-[1px] bg-black border-none my-4" />
@@ -345,7 +345,7 @@ export default function Home() {
               giải pháp về Cloud cho doanh nghiệp. Chúng tôi là đối tác đáng tin
               cậy, hướng tới việc tối ưu hóa hiệu suất kinh doanh của khách hàng
               thông qua việc triển khai các giải pháp công nghệ tiên tiến, phù
-              hợp với nhu cầu cụ thể của họ.
+              hợp với nhu cầu cụ thể của quý khách hàng.
             </p>
           </div>
           <div className="relative h-[600px] flex justify-end">

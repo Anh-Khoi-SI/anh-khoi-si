@@ -8,26 +8,8 @@ const items = [
     type: "divider",
   },
   {
-    key: "sub1",
-    label: "Liên Hệ",
-    children: [
-      {
-        key: "1",
-        label: "Option 1",
-      },
-      {
-        key: "2",
-        label: "Option 2",
-      },
-      {
-        key: "3",
-        label: "Option 3",
-      },
-      {
-        key: "4",
-        label: "Option 4",
-      },
-    ],
+    key: "1",
+    label: <Link href="/admin/manage-blog">Quản lý Blog</Link>,
   },
 ];
 

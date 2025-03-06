@@ -10,12 +10,14 @@ const About = () => {
       {/* Top Section */}
       <section className="w-full h-screen">
         <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
-        <Image
-          src="https://res.cloudinary.com/anh-khoi/image/upload/v1739851704/banner/Thi%E1%BA%BFt_k%E1%BA%BF_ch%C6%B0a_c%C3%B3_t%C3%AAn_5_ba4vb7.png"
-          fill
-          alt="banner-about"
-          className=" object-cover"
-        />
+        <div className="w-full h-full z-0 relative">
+          <Image
+            src="https://res.cloudinary.com/anh-khoi/image/upload/v1739851704/banner/Thi%E1%BA%BFt_k%E1%BA%BF_ch%C6%B0a_c%C3%B3_t%C3%AAn_5_ba4vb7.png"
+            fill
+            alt="banner-about"
+            className="object-cover"
+          />
+        </div>
 
         <div className=" absolute left-0 sm:left-[10%] bottom-0 right-0 z-20">
           <div className="w-full bg-white flex ">

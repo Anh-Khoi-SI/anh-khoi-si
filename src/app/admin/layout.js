@@ -1,20 +1,20 @@
 "use client";
+
 import React from "react";
-import AdminSidebar from "@/components/layout/AdminSidebar";
-import AdminHeader from "@/components/layout/AdminHeader";
+import AdminSidebar from "@/components/layout/admin/AdminSidebar";
+import AdminHeader from "@/components/layout/admin/AdminHeader";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 export default function AdminLayout({ children }) {
   return (
-    <html lang="vi">
-      <body className="h-screen flex">
-        {/* Sidebar */}
+    <AntdRegistry>
+      <div>
         <AdminSidebar />
-        <AdminHeader />
-        {/* Main Content */}
-        <div className="flex-1 overflow-hidden ml-[200px] mt-[50px]">
-          <div className="h-full p-6 overflow-y-auto">{children}</div>
+        <div className="overflow-hidden ml-[110px] mt-[30px]">
+          <AdminHeader />
+          <div>{children}</div>
         </div>
-      </body>
-    </html>
+      </div>
+    </AntdRegistry>
   );
 }

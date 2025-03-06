@@ -10,8 +10,8 @@ import ContactSection from "../shared/ContactSection";
 const menuItems = [
   { key: "home", label: "Trang chủ", href: "/" },
   { key: "about", label: "Giới thiệu", href: "/about" },
+  { key: "blog", label: "Tin Tức", href: "/blog" },
   { key: "product", label: "Sản phẩm", href: "/products" },
-  { key: "contact", label: "Liên hệ", href: "/contact" },
 ];
 
 const serviceItems = [
@@ -19,78 +19,78 @@ const serviceItems = [
     key: "1",
     label: <div className="text-black">Giải Pháp Tích Hợp Hệ Thống</div>,
     href: "/services/system-integration",
-    children: [
-      {
-        key: "1-1",
-        label: "DC Infrastructure Solution",
-        href: "/system-integration/dc-infra-solution", // Thêm link
-      },
-      {
-        key: "1-2",
-        label: "Mạng Doanh Nghiệp",
-        href: "/system-integration/network-business", // Thêm link
-      },
-      {
-        key: "1-3",
-        label: "Mạng Quang",
-        href: "/system-integration/fiber-network", // Thêm link
-      },
-      {
-        key: "1-4",
-        label: "Máy Chủ - Lưu Trữ",
-        href: "/system-integration/server-storage", // Thêm link
-      },
-    ],
+    // children: [
+    //   {
+    //     key: "1-1",
+    //     label: "DC Infrastructure Solution",
+    //     href: "/services/system-integration/dc-infra-solution", // Thêm link
+    //   },
+    //   {
+    //     key: "1-2",
+    //     label: "Mạng Doanh Nghiệp",
+    //     href: "/services/system-integration/network-business", // Thêm link
+    //   },
+    //   {
+    //     key: "1-3",
+    //     label: "Mạng Quang",
+    //     href: "/services/system-integration/fiber-network", // Thêm link
+    //   },
+    //   {
+    //     key: "1-4",
+    //     label: "Máy Chủ - Lưu Trữ",
+    //     href: "/services/system-integration/server-storage", // Thêm link
+    //   },
+    // ],
   },
   {
     key: "2",
     label: <div className="text-black">Chuyển Đổi Số</div>,
     href: "/services/business-digitalization",
 
-    children: [
-      {
-        key: "2-1",
-        label: "DC SDN Solution",
-        href: "/business-digitalization/dc-sdn-solution",
-      },
-      {
-        key: "2-2",
-        label: "Wifi - Mạng không dây",
-        href: "/business-digitalization/wifi-wireless-network",
-      },
-      {
-        key: "2-3",
-        label: "Bảo Mật Mạng",
-        href: "/business-digitalization/network-security",
-      },
-      {
-        key: "2-4",
-        label: "DC Switching Solution",
-        href: "/business-digitalization/dc-switching-solution",
-      },
-    ],
+    // children: [
+    //   {
+    //     key: "2-1",
+    //     label: "DC SDN Solution",
+    //     href: "/services/business-digitalization/dc-sdn-solution",
+    //   },
+    //   {
+    //     key: "2-2",
+    //     label: "Wifi - Mạng không dây",
+    //     href: "/services/business-digitalization/wifi-wireless-network",
+    //   },
+    //   {
+    //     key: "2-3",
+    //     label: "Bảo Mật Mạng",
+    //     href: "/services/business-digitalization/network-security",
+    //   },
+    //   {
+    //     key: "2-4",
+    //     label: "DC Switching Solution",
+    //     href: "/services/business-digitalization/dc-switching-solution",
+    //   },
+    // ],
   },
   {
     key: "3",
     label: <div className="text-black">Giải Pháp Cloud</div>,
     href: "/services/cloud-solutions",
-    children: [
-      {
-        key: "3-1",
-        label: "Enterprise Data Storage",
-        href: "/#",
-      },
-      {
-        key: "3-2",
-        label: "DC Switching Solution",
-        href: "/#",
-      },
-      {
-        key: "3-3",
-        label: "Bảo Mật Mạng",
-        href: "/#",
-      },
-    ],
+    // children: [
+    //   {
+    //     key: "3-1",
+    //     label: "Enterprise Data Storage",
+    //     href: "/services/cloud-solutions/enterprise-data-storage",
+    //   },
+    //   {
+    //     key: "3-2",
+    //     label: "DC Switching Solution",
+    //     href: "/services/cloud-solutions/dc-switching-solution",
+    //   },
+    //   {
+    //     key: "3-3",
+    //     label: "Bảo Mật Mạng",
+    //     href: "/services/cloud-solutions/network-security",
+    //   },
+    // ],
   },
 ];
 
@@ -130,15 +130,6 @@ export default function Navbar() {
     };
   }, []);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
   const [disableUnderline, setDisableUnderline] = useState(false);
 
   useEffect(() => {
@@ -238,10 +229,10 @@ export default function Navbar() {
                 items: serviceItems.map((item) => ({
                   key: item.key,
                   label: <Link href={item.href}>{item.label}</Link>,
-                  children: item.children.map((child) => ({
-                    key: child.key,
-                    label: <Link href={child.href}>{child.label}</Link>,
-                  })),
+                  // children: item.children.map((child) => ({
+                  //   key: child.key,
+                  //   label: <Link href={child.href}>{child.label}</Link>,
+                  // })),
                 })),
               }}
               trigger={["hover"]}
@@ -276,9 +267,9 @@ export default function Navbar() {
 
       <div className="flex items-center gap-6">
         {/* Button Liên Hệ */}
-        <div
+        <Link
           className="relative border-[1px] items-center p-2 px-4 gap-2 border-secondary overflow-hidden group hidden xl:flex"
-          onClick={showModal}
+          href="/contact"
         >
           {/* Lớp nền chạy từ trái sang phải */}
           <span className="cursor-pointer absolute inset-0 w-full bg-gradient-to-r from-primary to-transparent transition-all duration-500 transform -translate-x-full group-hover:translate-x-0"></span>
@@ -304,7 +295,7 @@ export default function Navbar() {
               />
             </svg>
           </div>
-        </div>
+        </Link>
 
         {/* Thông Tin Liên Hệ*/}
         <div className=" gap-4 items-center lg:flex hidden">
@@ -543,7 +534,7 @@ export default function Navbar() {
         )}
       </div>
 
-      <ConfigProvider
+      {/* <ConfigProvider
         theme={{
           components: {
             Modal: {
@@ -566,7 +557,7 @@ export default function Navbar() {
             <ContactSection />
           </div>
         </Modal>
-      </ConfigProvider>
+      </ConfigProvider> */}
     </div>
   );
 }
