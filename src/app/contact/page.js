@@ -123,7 +123,7 @@ export default function Contact() {
             <h2 className="text-lg font-medium mb-2">Thông Tin Khác</h2>
             <div className="flex gap-2 flex-col text-gray-600">
               <p>
-                Tài khoản số: 1670342339 Tại Ngân Hàng ACB-CN Nguyễn Văn Trỗi
+                Tài khoản số: 257606579 Tại Ngân Hàng ACB-CN Nguyễn Văn Trỗi
               </p>
               <p>Mã số thuế: 0314849179</p>
               <a href="https://anhkhoisi.com.vn">

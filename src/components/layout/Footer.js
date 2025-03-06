@@ -5,15 +5,18 @@ import React from "react";
 const footerItems = [
   {
     title: "VỀ ANH KHÔI",
-    items: ["Giới thiệu công ty", "Thông tin đối tác", "Thông tin liên hệ"],
+    items: [
+      { title: "Giới thiệu công ty", href: "/about" },
+      { title: "Thông tin liên hệ", href: "/contact" },
+    ],
   },
   {
     title: "GIẢI PHÁP",
     items: [
-      "Chính sách bảo mật",
-      "Điều khoản sử dụng",
-      "Chính sách đổi trả",
-      "Chính sách vận chuyển",
+      { title: "Tích hợp hệ thống", href: "/services/system-integration" },
+      { title: "Chuyển đổi số", href: "/services/business-digitalization" },
+      { title: "Giải pháp Cloud", href: "/services/cloud-solutions" },
+      { title: "Các Yêu Cầu Khác", href: "/contact" },
     ],
   },
   {
@@ -58,7 +61,7 @@ export default function Footer() {
               </label>
               <div className="flex flex-col space-y-2">
                 {section.items.map((item, itemIndex) => (
-                  <span
+                  <a
                     key={itemIndex}
                     className="text-gray-100  hover:text-gray-200 text-sm sm:text-base cursor-pointer"
                     onClick={() => {
@@ -66,9 +69,10 @@ export default function Footer() {
                         window.open(item.link, "_blank");
                       }
                     }}
+                    href={item.href}
                   >
-                    {typeof item === "object" ? item.text : item}
-                  </span>
+                    {typeof item === "object" ? item.title : item}
+                  </a>
                 ))}
               </div>
             </div>

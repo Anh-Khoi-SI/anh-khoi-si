@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.anhkhoisi.com.vn/
+
+# Sitemaps
+Sitemap: https://www.anhkhoisi.com.vn/sitemap.xml

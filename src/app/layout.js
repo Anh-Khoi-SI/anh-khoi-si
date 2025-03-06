@@ -1,29 +1,35 @@
+"use client";
+
 import "antd/dist/reset.css";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
-import "./globals.css"; // CSS của Tailwind
+import "./globals.css";
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Analytics } from "@vercel/analytics/next";
 
-export const metadata = {
-  title: "Anh Khôi | Công Ty CP Tích Hợp Hệ Thống Anh Khôi",
-  icons: {
-    icon: "/logo/anhkhoi-pri.ico",
-  },
-  description:
-    "Chúng tôi cung cấp các giải pháp tích hợp hệ thống đa dạng, từ tư vấn Hạ tầng CNTT đến triển khai ứng dụng hệ thống, giúp doanh nghiệp tối ưu hóa quá trình kinh doanh và tăng cường hiệu suất làm việc.",
-};
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import { Analytics } from "@vercel/analytics/next";
+import { usePathname } from "next/navigation";
+import AdminLayout from "./admin/layout";
+import "@ant-design/v5-patch-for-react-19";
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const isAdmin = pathname.startsWith("/admin");
+
   return (
     <html lang="vi">
       <body className="min-h-screen">
         <AntdRegistry>
-          <Navbar />
-          {children}
-          <Footer />
+          {isAdmin ? (
+            <AdminLayout>{children}</AdminLayout>
+          ) : (
+            <>
+              <Navbar />
+              {children}
+              <Footer />
+            </>
+          )}
         </AntdRegistry>
-
         <Analytics />
       </body>
     </html>
