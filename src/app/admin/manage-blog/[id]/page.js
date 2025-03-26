@@ -34,7 +34,7 @@ export default function EditBlog() {
 
   return (
     <div className="">
-      <h2 className="text-2xl font-bold">{blog.title}</h2>
+      <input className="text-2xl font-bold" value={blog.title} />
       <p className="text-gray-600">{blog.subTitle}</p>
       <img
         src={blog.banner}

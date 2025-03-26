@@ -1,3 +1,5 @@
+import removeImports from "next-remove-imports";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
@@ -17,4 +19,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default removeImports()(nextConfig);

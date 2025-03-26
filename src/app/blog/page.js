@@ -67,48 +67,49 @@ export default function Blog() {
     //       </span>
     //     </div>
     //     <div className="max-w-[1400px] w-full gap-6 grid grid-cols-3">
-    //       <div className="col-span-2 grid grid-cols-2 gap-6">
-    //         {loading ? (
-    //           <Spin className="col-span-2 flex justify-center" />
-    //         ) : (
-    //           currentPosts.map((blog, index) => (
-    //             <div
-    //               className="gap-4 flex flex-col bg-lightbackground pb-4 cursor-pointer group"
-    //               key={index}
-    //               onClick={() => router.push(`/blog/${blog.slug}`)}
-    //             >
-    //               <div className="w-full h-[300px] relative">
-    //                 <Image
-    //                   src={blog.banner}
-    //                   fill
-    //                   alt={`Blog image ${index}`}
-    //                   className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-    //                 />
-    //               </div>
-    //               <div className="px-4 gap-4 flex flex-col">
-    //                 <div className="font-medium text-xl">{blog.title}</div>
-    //                 <div className="">{blog.subTitle}</div>
-    //                 <div className="">
-    //                   <span className="group-hover:border-b-[1px] group-hover:border-black border-lightbackground border-b-[1px] cursor-pointer font-medium transition-all duration-300">
-    //                     Xem Thêm
-    //                   </span>
+    //       <div className="col-span-2 ">
+    //         <div className="grid grid-cols-2  gap-6">
+    //           {loading ? (
+    //             <Spin className="col-span-2 flex justify-center" />
+    //           ) : (
+    //             currentPosts.map((blog, index) => (
+    //               <div
+    //                 className="gap-4 flex flex-col bg-lightbackground pb-4 cursor-pointer group"
+    //                 key={index}
+    //                 onClick={() => router.push(`/blog/${blog.slug}`)}
+    //               >
+    //                 <div className="w-full h-[300px] relative">
+    //                   <Image
+    //                     src={blog.banner}
+    //                     fill
+    //                     alt={`Blog image ${index}`}
+    //                     className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+    //                   />
+    //                 </div>
+    //                 <div className="px-4 gap-4 flex flex-col">
+    //                   <div className="font-medium text-xl">{blog.title}</div>
+    //                   <div className="">{blog.subTitle}</div>
+    //                   <div className="">
+    //                     <span className="group-hover:border-b-[1px] group-hover:border-black border-lightbackground border-b-[1px] cursor-pointer font-medium transition-all duration-300">
+    //                       Xem Thêm
+    //                     </span>
+    //                   </div>
     //                 </div>
     //               </div>
-    //             </div>
-    //           ))
-    //         )}
+    //             ))
+    //           )}
+    //         </div>
+    //         <div className="flex justify-center items-center py-6 ">
+    //           <Pagination
+    //             current={currentPage}
+    //             pageSize={blogsPerPage}
+    //             total={blogs.length}
+    //             onChange={handlePageChange}
+    //             showSizeChanger={false}
+    //           />
+    //         </div>
     //       </div>
     //       <BlogCategoriesMenu />
-    //     </div>
-
-    //     <div className="flex justify-center items-center py-4">
-    //       <Pagination
-    //         current={currentPage}
-    //         pageSize={blogsPerPage}
-    //         total={blogs.length}
-    //         onChange={handlePageChange}
-    //         showSizeChanger={false}
-    //       />
     //     </div>
     //   </section>
     // </>
