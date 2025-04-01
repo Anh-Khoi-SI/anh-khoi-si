@@ -97,9 +97,11 @@ export default function Contact() {
             <div className="grid md:grid-cols-3 gap-4">
               <div className="space-y-2">
                 <h3 className="font-medium">Phòng kinh doanh:</h3>
-                <p className="text-gray-600">Mr Trung Trần</p>
+                <p className="text-gray-600">Mr Trung</p>
                 <p className="text-gray-600">SĐT: 090 830 1313</p>
-                <p className="text-gray-600">Email: info@anhkhoisi.com.vn</p>
+                <p className="text-gray-600">
+                  Email: trungtran@anhkhoisi.com.vn
+                </p>
               </div>
 
               <div className="space-y-2">
@@ -107,8 +109,10 @@ export default function Contact() {
                   Phòng kỹ thuật - Hỗ trợ bảo hành:
                 </h3>
                 <p className="text-gray-600">Mr Hưng</p>
-                <p className="text-gray-600">SĐT: 082 463 6768</p>
-                <p className="text-gray-600">Email: info@anhkhoisi.com.vn</p>
+                <p className="text-gray-600">SĐT: 097 405 3061</p>
+                <p className="text-gray-600">
+                  Email: hungnguyen@anhkhoisi.com.vn
+                </p>
               </div>
 
               <div className="space-y-2">
