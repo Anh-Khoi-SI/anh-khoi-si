@@ -11,7 +11,17 @@ const menuItems = [
   { key: "home", label: "Trang chủ", href: "/" },
   { key: "about", label: "Giới thiệu", href: "/about" },
   { key: "blog", label: "Tin Tức", href: "/blog" },
-  { key: "product", label: "Sản phẩm", href: "/products" },
+  { key: "product", label: "Sản phẩm" },
+];
+
+const productItems = [
+  { key: "switches", label: "Switch", href: "/product-list/switch" },
+  { key: "routers", label: "Router", href: "/product-list/router" },
+  {
+    key: "access-points",
+    label: "Access Point",
+    href: "/product-list/wifi-access-point",
+  },
 ];
 
 const serviceItems = [
@@ -188,18 +198,78 @@ export default function Navbar() {
             ref={menuRef}
             className="flex gap-6 text-sm font-regular z-10 relative lg:text-sm xl:text-lg "
           >
-            {menuItems.map((item) => (
-              <Link
-                key={item.key}
-                href={item.href}
-                data-key={item.key}
-                className={`cursor-pointer pb-2 ${
-                  current === item.key ? "text-black" : "text-gray-600"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {menuItems.map((item) => {
+              if (item.key === "product") {
+                return (
+                  <ConfigProvider
+                    key={item.key}
+                    theme={{
+                      token: {
+                        borderRadiusLG: 0,
+                        controlPaddingHorizontal: 20,
+                        padding: 40,
+                        fontSize: 16,
+                      },
+                      components: {
+                        Dropdown: {
+                          paddingBlock: 18,
+                        },
+                      },
+                    }}
+                  >
+                    <Dropdown
+                      menu={{
+                        items: productItems.map((subItem) => ({
+                          key: subItem.key,
+                          label: (
+                            <Link href={subItem.href}>{subItem.label}</Link>
+                          ),
+                        })),
+                      }}
+                      trigger={["hover"]}
+                    >
+                      <div
+                        className={`${
+                          current === "product"
+                            ? "text-black border-b-[2px] border-primary "
+                            : "text-gray-600"
+                        } gap-2 text-sm font-regular z-10 relative lg:text-sm xl:text-lg  cursor-pointer pb-2  hover:text-black flex items-center `}
+                      >
+                        {item.label}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="size-4 ml-1"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                          />
+                        </svg>
+                      </div>
+                    </Dropdown>
+                  </ConfigProvider>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  data-key={item.key}
+                  className={`cursor-pointer pb-2 ${
+                    current === item.key ? "text-black" : "text-gray-600"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
             <div
               className="absolute bottom-0 h-[2px] bg-primary transition-all duration-300"
               style={{
@@ -431,27 +501,61 @@ export default function Navbar() {
               </svg>
             </Link>
 
-            <Link
-              className="w-full items-center p-6 flex justify-between bg-lightbackground"
-              href="/products"
-              onClick={handleCloseMenu}
+            <ConfigProvider
+              theme={{
+                token: {
+                  borderRadiusLG: 0,
+                  controlPaddingHorizontal: 20,
+                  padding: 40,
+                  fontSize: 16,
+                  boxShadowSecondary: 0,
+                },
+                components: {
+                  Dropdown: {},
+                },
+              }}
             >
-              Sản Phẩm
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-5"
+              <Dropdown
+                menu={{
+                  items: serviceItems.map((item) => ({
+                    key: item.key,
+                    label: (
+                      <Link
+                        onClick={handleCloseMenu}
+                        className="w-full flex px-6 py-4 items-center"
+                        href={item.href}
+                      >
+                        {item.label}
+                      </Link>
+                    ),
+                  })),
+                }}
+                trigger={["click"]}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </Link>
+                <div
+                  className={`w-full items-center p-6 flex justify-between bg-lightbackground cursor-pointer relative `}
+                  onClick={() => setServiceOpen(!serviceOpen)}
+                >
+                  Sản Phẩm
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className={` size-5  ${
+                      serviceOpen ? " rotate-90" : ""
+                    }  transition-transform `}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </div>
+              </Dropdown>
+            </ConfigProvider>
 
             <Link
               className="w-full items-center p-6 flex justify-between bg-lightbackground"
