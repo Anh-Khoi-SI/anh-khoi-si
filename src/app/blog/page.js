@@ -9,34 +9,34 @@ import { useRouter } from "next/navigation";
 import ComingSoon from "@/components/shared/ComingSoon";
 
 export default function Blog() {
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [blogsPerPage] = useState(4);
+  // const [blogs, setBlogs] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [blogsPerPage] = useState(4);
 
-  const router = useRouter();
+  // const router = useRouter();
 
-  useEffect(() => {
-    setLoading(true);
+  // useEffect(() => {
+  //   setLoading(true);
 
-    axios
-      .get("/api/blogs")
-      .then((res) => {
-        setBlogs(res.data);
-      })
-      .catch((err) => console.error("Error fetching blogs:", err))
-      .finally(() => setLoading(false));
-  }, []);
+  //   axios
+  //     .get("/api/blogs")
+  //     .then((res) => {
+  //       setBlogs(res.data);
+  //     })
+  //     .catch((err) => console.error("Error fetching blogs:", err))
+  //     .finally(() => setLoading(false));
+  // }, []);
 
-  const indexOfLastBlog = currentPage * blogsPerPage;
-  const indexOfFirstPost = indexOfLastBlog - blogsPerPage;
-  const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastBlog);
+  // const indexOfLastBlog = currentPage * blogsPerPage;
+  // const indexOfFirstPost = indexOfLastBlog - blogsPerPage;
+  // const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastBlog);
 
-  const totalPages = Math.ceil(blogs.length / blogsPerPage);
+  // const totalPages = Math.ceil(blogs.length / blogsPerPage);
 
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+  // const handlePageChange = (pageNumber) => {
+  //   setCurrentPage(pageNumber);
+  // };
   return (
     // <>
     //   <section className="pt-[87px] justify-center flex flex-col items-center">
