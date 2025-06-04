@@ -202,9 +202,8 @@ const Filter = ({
 
   return (
     <Card
-      bordered={false}
-      className=" rounded-lg shadow-sm pb-10"
-      style={{ background: "transparent" }}
+      className=" rounded-lg shadow-sm pb-10 "
+      style={{ background: "transparent", border: "none" }}
     >
       <ConfigProvider
         theme={{
@@ -218,7 +217,9 @@ const Filter = ({
             <div key={_id}>
               {loading[_id] ? (
                 <div className="flex justify-center items-center py-6">
-                  <Spin tip="Đang tải..." />
+                  <Spin tip="Đang tải...">
+                    <div className="h-10 w-10" />{" "}
+                  </Spin>
                 </div>
               ) : (
                 renderFilter(options[_id], title, _id)

@@ -150,6 +150,9 @@ export default function Navbar() {
     } else if (pathname.startsWith("/services")) {
       setCurrent("service"); // Đặt current cho mục "Dịch vụ"
       setDisableUnderline(true); // Tắt hiệu ứng underline
+    } else if (pathname.startsWith("/product-list")) {
+      setCurrent("product"); // Đặt current cho mục "Sản phẩm"
+      setDisableUnderline(true); // Tắt hiệu ứng underline
     }
   }, [pathname]);
 
